@@ -345,6 +345,7 @@ def morning_analysis():
 
     # 获取昨日回顾
     yesterday_review = build_yesterday_review(date_str)
+    yesterday_review_block = f"\n【昨日推荐回顾】\n{yesterday_review}\n" if yesterday_review else ""
 
     system_prompt = """你是职业A股分析师，擅长多维度分析。
 
@@ -366,7 +367,7 @@ def morning_analysis():
 【板块表现】
 {chr(10).join(sectors) if sectors else "暂无数据"}
 
-{f"【昨日推荐回顾】\n{yesterday_review}\n" if yesterday_review else ""}
+{yesterday_review_block}
 请严格按照以下格式输出：
 
 📋 今日盘前关注（3只）
