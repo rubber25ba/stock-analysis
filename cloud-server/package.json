@@ -1,0 +1,9 @@
+{
+  "name": "stock-analysis-server",
+  "version": "1.0.0",
+  "description": "AI股票分析云服务 - 每日9:00/9:30自动推送微信",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
