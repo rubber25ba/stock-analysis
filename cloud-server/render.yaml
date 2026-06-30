@@ -1,0 +1,13 @@
+# Render 部署配置
+services:
+  - type: web
+    name: stock-analysis
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /status
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: PUSHPLUS_TOKEN
+        sync: false
